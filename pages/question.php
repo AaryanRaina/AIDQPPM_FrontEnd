@@ -48,7 +48,7 @@
             <div class="content">
                 
                 User: <span class="heavy"><?php echo $full_name; ?></span>&nbsp;&nbsp;
-                Faculty: <span class="heavy"><?php echo $faculty_name; ?></span>&nbsp;&nbsp;
+                Module No. : <span class="heavy"><?php echo $faculty_name; ?></span>&nbsp;&nbsp;
                 Start Time: <span class="heavy"><?php echo $_SESSION['strt_time']; ?></span>&nbsp;&nbsp;
                 End Time: <span class="heavy"><?php echo $_SESSION['end_time']; ?></span>&nbsp;&nbsp;
                 <?php 
@@ -81,7 +81,7 @@
                             
                             //Get English Questions Only
                             
-                            $where="is_active='yes' && faculty='".$faculty."' && question_id NOT IN (".$_SESSION['all_qns'].")";
+                            $where="is_active='yes' && faculty='".$faculty."' && sid='".$_SESSION['sid']."' && qpid='".$_SESSION['qpid']."' && question_id NOT IN (".$_SESSION['all_qns'].")";
 
                             //Get Maths Questions Only
                             //New Query
@@ -158,7 +158,7 @@
                                 <input type="radio" name="answer" value="2" required="true" /> <span class="radio-ans"><?php echo $second_answer; ?></span> <hr /><br />
                                 <input type="radio" name="answer" value="3" required="true" /> <span class="radio-ans"><?php echo $third_answer; ?></span>  <hr /><br />
                                 <input type="radio" name="answer" value="4" required="true" /> <span class="radio-ans"><?php echo $fourth_answer; ?></span>  <hr /><br />
-                                <input type="radio" name="answer" value="5" required="true" /> <span class="radio-ans"><?php echo $fifth_answer; ?> <hr /><br />&nbsp;
+                                <br />&nbsp;
                                 <input type="hidden" name="question_id" value="<?php echo $question_id; ?>" />
                                 <input type="hidden" name="right_answer" value="<?php echo $answer; ?>" />
                                 <input type="hidden" name="marks" value="<?php echo $marks; ?>" />
@@ -208,6 +208,7 @@
                                 $tbl_name="tbl_student";
                                 $student_id=$obj->get_userid($tbl_name,$username,$conn);
                                 $added_date=date('Y-m-d');
+                                $qpid=$_SESSION['qpid'];
                                 //Now Adding Data to Database
                                 $tbl_name="tbl_result";
                                 $data="
@@ -215,7 +216,8 @@
                                 question_id='$question_id',
                                 user_answer='$user_answer',
                                 right_answer='$right_answer',
-                                added_date='$added_date'
+                                added_date='$added_date',
+                                qpid='$qpid'
                                 ";
                                 //CHeck if the total score is set or not
                                 if(isset($_SESSION['totalScore']))

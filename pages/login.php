@@ -28,8 +28,13 @@
                         $query=$obj->select_data($tbl_name,$where);
                         $res=$obj->execute_query($conn,$query);
                         $count_rows=$obj->num_rows($res);
+
                         if($count_rows>0)
                         {
+                            $result=mysqli_query($conn,"select student_id from tbl_student where username = '$username'");
+                            $_SESSION['sid']=mysqli_fetch_array($result)['student_id'];
+                            $result1=mysqli_query($conn,"select qpid from tbl_student where username = '$username'");
+                            $_SESSION['qpid']=mysqli_fetch_array($result1)['qpid'];                           
                             $_SESSION['student']=$username;
                             $_SESSION['login']="<div class='success'>Login Successful.</div>";
                             header('location:'.SITEURL.'index.php?page=welcome');

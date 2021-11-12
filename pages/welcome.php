@@ -17,15 +17,14 @@
                             //$_SESSION['start_time']=
                         }
                     ?>
-                    Hello <span class="heavy"><?php echo $_SESSION['student']; ?></span>. Welcome to Test Preparation Portal.<br />
+                    Hello <span class="heavy"><?php echo $_SESSION['student'];echo $_SESSION['sid'];echo $_SESSION['qpid']; ?></span>. Welcome to Test Preparation Portal.<br />
                     
                     <div class="success">
                         <p style="text-align: left;">
                             Here are some of the rules and regulations of this app.<br />
                             1. This test is automated and you won't be able to return to previous question.<br />
-                            2. Once you successfully login, you can't log back in unless the permission of system administrator.<br />
+                            2. Once you successfully login, you can't log back in.<br />
                             3. After you click on "Take a Test", the timer will start and it can't be paused or stopped.<br />
-                            4. English questions will appear first and after you finish Englihs, you will be given Math question.
                         </p>
                     </div>
                     

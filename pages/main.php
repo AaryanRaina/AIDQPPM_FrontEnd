@@ -72,8 +72,10 @@
             if($res==true)
             {
                 //Setting Student Is_Active Mode to No
+                $query4="update tbl_student Set qpid = qpid + 1 Where student_id='$student_id'";
+                $res4=$obj->execute_query($conn,$query4);
                 $tbl_name3="tbl_student";
-                $data3="is_active='no'";
+                $data3="is_active='yes'";
                 $where3="student_id='$student_id'";
                 $query3=$obj->update_data($tbl_name3,$data3,$where3);
                 $res3=$obj->execute_query($conn,$query3);
