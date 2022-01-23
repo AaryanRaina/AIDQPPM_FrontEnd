@@ -27,7 +27,12 @@
                             3. After you click on "Take a Test", the timer will start and it can't be paused or stopped.<br />
                         </p>
                     </div>
-                    
+
+                    <!-- Extra-button -->
+                    <!-- <button class="btn1">CLICK</button> 
+                    <button class="btn2">wow you really clicked</button>  -->
+                    <!-- /Extra-button -->
+
                     <a href="<?php echo SITEURL; ?>index.php?page=question">
                         <button type="button" class="btn-go">Take a Test</button>
                     </a>
@@ -38,3 +43,12 @@
             </div>
         </div>
         <!--Body Ends Here-->
+        <!-- <script type="text/javascript">
+            document.querySelector('.btn2').style.display = 'none'; 
+            document.querySelector('.btn1').addEventListener('click', showBtn); 
+            
+            function showBtn(e) { 
+            document.querySelector('.btn2').style.display = 'block'; 
+            e.preventDefault(); 
+            } 
+        </script> -->
