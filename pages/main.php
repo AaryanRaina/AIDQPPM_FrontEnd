@@ -39,6 +39,12 @@
             include('detail_result.php');
         }
         break;
+
+        case "changemodule":
+            {
+                include('changemodule.php');
+            }
+        break;
         
         case "logout":
         {

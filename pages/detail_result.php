@@ -146,8 +146,12 @@
                             <?php
                         }
                     ?>
+                        <br>
                         <a href="<?php echo SITEURL; ?>index.php?page=logout">
                             <button type="button" class="btn-exit">Log Out</button>
+                        </a>
+                        <a href="<?php echo SITEURL; ?>index.php?page=changemodule">
+                        <button type="button" class="btn2 btn-go">Change Module</button>
                         </a>
                     
                     
